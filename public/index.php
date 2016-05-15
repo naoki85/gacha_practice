@@ -76,7 +76,7 @@ $result = array_shift($list);
                 がちゃ④
         </button>
         <div id="result1">
-            <img src="../images/<?php echo $result; ?>.jpg" width="200px">
+            <img src="./images/<?php echo $result; ?>.jpg" width="200px">
         </div>
 
         <!-- JavaScript -->
