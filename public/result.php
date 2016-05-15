@@ -27,7 +27,7 @@ if(isset($_SESSION['list'])) {
 <body>
     <h4>結果</h4>
     <div>
-        <img src="./images/<?php echo $result; ?>.jpg" width="200px">
+        <img src="../images/<?php echo $result; ?>.jpg" width="200px">
     </div>
     <?php if(isset($total_count)): ?>
         <h4>確率</h4>

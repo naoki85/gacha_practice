@@ -72,8 +72,11 @@ $result = array_shift($list);
         <button class="btn" type="button" onclick="location.href='./gachaThird.php'">
                 がちゃ③
         </button>
+        <button class="btn" type="button" onclick="location.href='./gachaFourth.php'">
+                がちゃ④
+        </button>
         <div id="result1">
-            <img src="./images/<?php echo $result; ?>.jpg" width="200px">
+            <img src="../images/<?php echo $result; ?>.jpg" width="200px">
         </div>
 
         <!-- JavaScript -->
