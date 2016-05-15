@@ -1,0 +1,17 @@
+/* 全体 */
+* {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+/* がちゃ１の結果 */
+#result1 {
+    display: none;
+    margin: 10px;
+}
+
+/* ボタン */
+.btn {
+
+}
