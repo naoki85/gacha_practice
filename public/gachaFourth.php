@@ -23,7 +23,7 @@ foreach($list as $value) {
 }
 
 // 今回の乱数生成
-$rate = rand(0, $max - 1);
+$rate = mt_rand(0, $max - 1);
 
 // 乱数がどこに当たるか調べていく
 foreach($list as $value) {
@@ -31,7 +31,7 @@ foreach($list as $value) {
     // 結果が見つかったら、値を格納
     if($max <= $rate) {
         $_SESSION['result'] = $value['name'];
-        header('lLocation: ./result.php');
+        header('Location: ./result.php');
         exit;
     }
 }
