@@ -24,5 +24,5 @@ $result = array_shift($list);
 $_SESSION['result'] = $result;
 
 // 結果ページにリダイレクト
-header('Location: http:result.php');
+header('Location: ./result.php');
 exit;

@@ -36,5 +36,5 @@ $_SESSION['result'] = $data;
 $_SESSION['array_flg'] = 1;
 
 // 結果ページにリダイレクト
-header('Location: http:result.php');
+header('Location: ./result.php');
 exit;
