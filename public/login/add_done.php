@@ -1,14 +1,19 @@
 <?php
 
-$db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-$db['dbname'] = ltrim($db['path'], '/');
-$dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$pass = $url["pass"];
+$db = substr($url["path"], 1);
+
+$dsn = new mysqli($server, $username, $pass, $db);
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 try {
-    $db = new PDO($dsn, $db['user'], $db['pass']);
+    $db = new PDO($server, $username, $pass);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -25,6 +30,5 @@ try {
     $_SESSION['error_flg'] = "データベース接続エラー";
     header('Location: ./add.php');
     exit;
-
 }
 
