@@ -17,11 +17,12 @@ try {
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'INSERT INTO `users` VALUES (null, ":username", :password, :now_time, :now_time)';
+    $sql = 'INSERT INTO `users` VALUES (null, ":username", :password, :created_time, :updated_time)';
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':username', $username);
     $prepare->bindValue(':password', $password);
-    $prepare->bindValue(':now_time', time());
+    $prepare->bindValue(':created_time', time());
+    $prepare->bindValue(':updated_time', time());
     $prepare->execute();
     header('Location: ./login.php');
     exit;
