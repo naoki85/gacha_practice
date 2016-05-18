@@ -1,19 +1,19 @@
 <?php
 
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
-$server = $url["host"];
-$username = $url["user"];
-$pass = $url["pass"];
-$db = substr($url["path"], 1);
-
-$dsn = new mysqli($server, $username, $pass, $db);
+if(empty($cleardb)) {
+    session_start();
+    $_SESSION['error_flg'] = "ClearDBから値を取得できていない";
+    header('Location: ./add.php');
+    exit;
+}
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 try {
-    $db = new PDO($server, $username, $pass);
+    $db = new PDO(sprintf("mysql:dbname=%s;host=%s", substr($cleardb['path'], 1), $cleardb['host']), $cleardb['user'], $cleardb['pass']);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
