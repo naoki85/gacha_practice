@@ -21,7 +21,7 @@ try {
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':username', $username, PDO::PARAM_STR);
     $prepare->bindValue(':password', $password, PDO::PARAM_STR);
-    $prepare->bindValue(':now_time', time(),    PDO::PARAM_INT);
+    $prepare->bindValue(':now_time', NOW(), PDO::PARAM_INT);
     $prepare->execute();
     header('Location: ./login.php');
     exit;
