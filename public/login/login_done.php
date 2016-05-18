@@ -31,6 +31,6 @@ if(isset($login_user)) {
     exit;
 } else {
     $_SESSION['error_flg'] = "名前かパスワードが間違っています。";
-    header('Location: ./login.php');
+    header('Location: ../mypage/mypage.php');
     exit;
 }

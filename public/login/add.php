@@ -18,7 +18,7 @@ $error_message = $_SESSION['error_flg'];
                 <?php echo $error_message; ?>
             </div>
         <?php endif; ?>
-        <form action="add_done" method="post">
+        <form action="add_done.php" method="post">
             <label for="username" />ユーザーネーム</label><input type="text" name="username" />
             <label for="password" />パスワード</label><input type="password" name="password" />
             <input type="submit" value="登録" />
