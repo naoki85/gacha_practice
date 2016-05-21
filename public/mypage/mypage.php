@@ -1,21 +1,11 @@
 <?php
-// セッションを初期化
+// ログインチェック
 session_start();
-$_SESSION = array();
+if(!$_SESSION['login_user_id']) {
+    return header('Location: ./login.php');
+}
 
-// 配列に値を格納
-$list = array(
-    'blueEyesWhiteDragon',
-    'redEyesBlackDragon',
-    'gyaraxyEyesFotonDragon',
-    'oddEyesPendulumDragon'
-);
-
-// 配列を混ぜる
-shuffle($list);
-
-// 配列の先頭1件を取得
-$result = array_shift($list);
+$username = $_SESSION['login_user_id'];
 ?>
 
 <!DOCTYPE html>
@@ -24,12 +14,12 @@ $result = array_shift($list);
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>がちゃ</title>
-        <link rel="stylesheet" href="my_template.css">
+        <link rel="stylesheet" href="../my_template.css">
     </head>
     <body>
-        <h4>いろいろながちゃ</h4>
-        <button class="btn" type="button" onclick="show()">
-                がちゃ①
+        <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
+        <button class="btn" type="button" onclick="location.href='./gachaFifth.php">
+                DBを利用してがちゃを作成
         </button>
         <button class="btn" type="button" onclick="location.href='./gachaSecond.php'">
                 がちゃ②

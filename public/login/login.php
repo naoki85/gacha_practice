@@ -9,7 +9,7 @@ $error_message = $_SESSION['error_flg'];
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>ログイン</title>
-        <link rel="stylesheet" href="my_template.css">
+        <link rel="stylesheet" href="../my_template.css">
     </head>
     <body>
         <h4>ログイン</h4>

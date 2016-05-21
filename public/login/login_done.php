@@ -2,15 +2,13 @@
 
 session_start();
 
-$db = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
-$db['dbname'] = ltrim($db['path'], '/');
-$dsn = "mysql:host={$db['host']};dbname={$db['dbname']};charset=utf8";
+$cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
 $username = $_POST['username'];
 $password = $_POST['password'];
 
 try {
-    $db = new PDO($dsn, $db['user'], $db['pass']);
+    $db = new PDO(sprintf("mysql:dbname=%s;host=%s", substr($cleardb['path'], 1), $cleardb['host']), $cleardb['user'], $cleardb['pass']);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

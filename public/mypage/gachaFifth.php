@@ -1,5 +1,13 @@
 <?php
 
+session_start();
+
+// ログインチェック
+session_start();
+if(!$_SESSION['login_user_id']) {
+    return header('Location: ./login.php');
+}
+
 $cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
 
 $username = $_POST['username'];
@@ -10,19 +18,15 @@ try {
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'INSERT INTO `users` VALUES (null, :username, :password, :created_time, :updated_time)';
+    $sql = 'SELECT * FROM `item` LEFT JOIN `gacha` ON `item`.`id` = `gacha`.`item_id`';
     $prepare = $db->prepare($sql);
-    $prepare->bindValue(':username', $username);
-    $prepare->bindValue(':password', $password);
-    $prepare->bindValue(':created_time', time());
-    $prepare->bindValue(':updated_time', time());
-    $prepare->execute();
-    header('Location: ./login.php');
-    exit;
+    $gacha_items = $prepare->execute();
+
+    
+
+
 } catch (PDOException $e) {
-    session_start();
-    $_SESSION['error_flg'] = $e->getMessage();
+    $_SESSION['error_flg'] = "データベース接続エラー";
     header('Location: ./add.php');
     exit;
 }
-
