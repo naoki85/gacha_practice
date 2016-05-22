@@ -1,15 +1,10 @@
 <?php
 // ログインチェック
 session_start();
-if(!$_SESSION['login_user']) {
+if(!$_SESSION['user_id']) {
     return header('Location: ../login/login.php');
 }
 
-$login_user = $_SESSION['login_user'];
-foreach($login_user as $user) {
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['id'] = $user['id'];
-}
 var_dump($_SESSION['username']);
 $username = $_SESSION['username'];
 ?>

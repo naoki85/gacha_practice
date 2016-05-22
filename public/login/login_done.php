@@ -24,7 +24,10 @@ try {
 }
 
 if(isset($login_user)) {
-    $_SESSION['login_user'] = $login_user;
+    foreach($login_user as $user) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+    }
     header('Location: ../mypage/mypage.php');
     exit;
 } else {
