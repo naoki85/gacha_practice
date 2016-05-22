@@ -25,10 +25,10 @@ try {
 
 if(isset($login_user)) {
     $_SESSION['login_user_id'] = $login_user_id;
-    header('Location: ./mypage.php');
+    header('Location: ../mypage/mypage.php');
     exit;
 } else {
     $_SESSION['error_flg'] = "名前かパスワードが間違っています。";
-    header('Location: ../mypage/mypage.php');
+    header('Location: ./login.php');
     exit;
 }

@@ -20,7 +20,8 @@ $error_message = $_SESSION['error_flg'];
         <?php endif; ?>
         <form action="login_done.php" method="post">
             <label for="username" />ユーザーネーム</label><input type="text" name="username" />
-            <label for="password" />パスワード</label><input type="password" name="password" /><input type="password" name="password" />
+            <label for="password" />パスワード</label><input type="password" name="password" />
+            <input type="submit" value="ログイン" />
         </form>
     </body>
 </html>

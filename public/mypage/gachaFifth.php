@@ -22,11 +22,25 @@ try {
     $prepare = $db->prepare($sql);
     $gacha_items = $prepare->execute();
 
-    
-
-
 } catch (PDOException $e) {
     $_SESSION['error_flg'] = "データベース接続エラー";
-    header('Location: ./add.php');
+    header('Location: ./mypage.php');
     exit;
 }
+
+    // 以下、がちゃ④と同様の実装
+    $max = 0;
+    foreach($gacha_items as $value) {
+        $max += $value['rate'];
+    }
+
+    $point = mt_rand(0, $max - 1);
+
+    foreach($gacha_items as $value) {
+        $max -= $value['rate'];
+        if($max <= $point) {
+            $_SESSION['result'] = $value['name'];
+            header('Location: ./result.php');
+            exit;
+        }
+    }
