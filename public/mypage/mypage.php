@@ -2,7 +2,7 @@
 // ログインチェック
 session_start();
 if(!$_SESSION['login_user']) {
-    return header('Location: ./login.php');
+    return header('Location: ../login/login.php');
 }
 
 $login_user = $_SESSION['login_user'];
@@ -10,7 +10,7 @@ foreach($login_user as $user) {
     $_SESSION['username'] = $user['username'];
     $_SESSION['id'] = $user['id'];
 }
-vardump($_SESSION['username']);
+var_dump($_SESSION['username']);
 $username = $_SESSION['username'];
 ?>
 
