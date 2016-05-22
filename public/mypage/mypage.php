@@ -1,11 +1,12 @@
 <?php
 // ログインチェック
 session_start();
-if(!$_SESSION['login_user_id']) {
+if(!$_SESSION['login_user']) {
     return header('Location: ./login.php');
 }
-
-$username = $_SESSION['login_user_id'];
+var_dump($_SESSION['login_user']);
+//$user_id = $_SESSION['login_user_id'];
+$username = "";
 ?>
 
 <!DOCTYPE html>
@@ -30,18 +31,5 @@ $username = $_SESSION['login_user_id'];
         <button class="btn" type="button" onclick="location.href='./gachaFourth.php'">
                 がちゃ④
         </button>
-        <button class="btn" type="button" onclick="location.href='./login/add.php'">
-                新規登録してログインする
-        </button>
-        <div id="result1">
-            <img src="./images/<?php echo $result; ?>.jpg" width="200px">
-        </div>
-
-        <!-- JavaScript -->
-        <script>
-            function show() {
-                document.getElementById("result1").style.display="block";
-            }
-        </script>
     </body>
 </html>

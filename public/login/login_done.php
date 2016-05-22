@@ -12,11 +12,11 @@ try {
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'SELECT `id` FROM `users` WHERE `username` = :username AND `password` = :password';
+    $sql = 'SELECT `id`, `username` FROM `users` WHERE `username` = :username AND `password` = :password';
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':username', $username, PDO::PARAM_STR);
     $prepare->bindValue(':password', $password, PDO::PARAM_STR);
-    $login_user_id = $prepare->execute();
+    $login_user = $prepare->execute();
 } catch (PDOException $e) {
     $_SESSION['error_flg'] = "データベース接続エラー";
     header('Location: ./add.php');
@@ -24,7 +24,7 @@ try {
 }
 
 if(isset($login_user_id)) {
-    $_SESSION['login_user_id'] = $login_user_id;
+    $_SESSION['login_user'] = $login_user;
     header('Location: ../mypage/mypage.php');
     exit;
 } else {
