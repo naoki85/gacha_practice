@@ -4,9 +4,14 @@ session_start();
 if(!$_SESSION['login_user']) {
     return header('Location: ./login.php');
 }
-var_dump($_SESSION['login_user']);
-//$user_id = $_SESSION['login_user_id'];
-$username = "";
+
+$login_user = $_SESSION['login_user'];
+foreach($login_user as $user) {
+    $_SESSION['username'] = $user['username'];
+    $_SESSION['id'] = $user['id'];
+}
+vardump($_SESSION['username']);
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
