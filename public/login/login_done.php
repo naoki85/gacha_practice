@@ -23,7 +23,7 @@ try {
     exit;
 }
 
-if(isset($login_user_id)) {
+if(isset($login_user)) {
     $_SESSION['login_user'] = $login_user;
     header('Location: ../mypage/mypage.php');
     exit;

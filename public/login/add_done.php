@@ -14,8 +14,8 @@ try {
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':username', $username);
     $prepare->bindValue(':password', $password);
-    $prepare->bindValue(':created_time', time());
-    $prepare->bindValue(':updated_time', time());
+    $prepare->bindValue(':created_time', date("Y-m-d H:i:s", time()));
+    $prepare->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
     $prepare->execute();
     header('Location: ./login.php');
     exit;
