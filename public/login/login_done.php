@@ -12,7 +12,7 @@ try {
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $sql = 'SELECT `id`, `username` FROM `users` WHERE `username` = :username AND `password` = :password';
+    $sql = 'SELECT `id` FROM `users` WHERE `username` = :username AND `password` = :password';
     $prepare = $db->prepare($sql);
     $prepare->bindValue(':username', $username, PDO::PARAM_STR);
     $prepare->bindValue(':password', $password, PDO::PARAM_STR);
@@ -24,10 +24,8 @@ try {
 }
 
 if(isset($login_user)) {
-    foreach($login_user as $user) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
-    }
+    $_SESSION['user_id'] = $login_user;
+    $_SESSION['username'] = $username;
     header('Location: ../mypage/mypage.php');
     exit;
 } else {

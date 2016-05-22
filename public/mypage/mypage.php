@@ -5,7 +5,6 @@ if(!$_SESSION['user_id']) {
     return header('Location: ../login/login.php');
 }
 
-var_dump($_SESSION['username']);
 $username = $_SESSION['username'];
 ?>
 
