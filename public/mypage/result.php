@@ -1,8 +1,10 @@
 <?php
 session_start();
 
-if(!$_SESSION['login_user_id']) {
-    return header('Location: ./login.php');
+// ログインチェック
+session_start();
+if(!$_SESSION['user_id']) {
+    return header('Location: ../login/login.php');
 }
 
 $result = $_SESSION['result'];

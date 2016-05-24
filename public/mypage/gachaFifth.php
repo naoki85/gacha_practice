@@ -4,8 +4,8 @@ session_start();
 
 // ログインチェック
 session_start();
-if(!$_SESSION['login_user_id']) {
-    return header('Location: ./login.php');
+if(!$_SESSION['user_id']) {
+    return header('Location: ../login/login.php');
 }
 
 $cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
