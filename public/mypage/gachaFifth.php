@@ -40,7 +40,7 @@ $point = mt_rand(0, $max - 1);
 foreach($gacha_items as $value) {
     $max -= $value['rate'];
     if($max <= $point) {
-        $_SESSION['result'] = $value['item_name'];
+        $_SESSION['result'] = $value['item_image'];
         break;
     }
 }

@@ -42,7 +42,7 @@ var_dump($result);
             </table>
         </div>
     <?php endif; ?>
-    <button class="btn" onclick="location.href='./index.php'">
+    <button class="btn" onclick="location.href='./mypage.php'">
         インデックスへ戻る
     </button>
 
