@@ -20,7 +20,8 @@ try {
 
     $sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id`';
     $prepare = $db->prepare($sql);
-    $gacha_items = $prepare->execute();
+    $prepare->execute();
+    $gacha_items = $prepare->fetchAll();
 
 } catch (PDOException $e) {
     $_SESSION['error_flg'] = "データベース接続エラー";
