@@ -18,7 +18,7 @@ $username = $_SESSION['username'];
     </head>
     <body>
         <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
-        <button class="btn" type="button" onclick="location.href='./gachaFifth.php">
+        <button class="btn" type="button" onclick="location.href='./gachaFifth.php'">
                 DBを利用してがちゃを作成
         </button>
         <button class="btn" type="button" onclick="location.href='./gachaSecond.php'">
