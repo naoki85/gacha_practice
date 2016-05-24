@@ -46,9 +46,11 @@ foreach($gacha_items as $value) {
 
 // がちゃログにインサート
 
+
+
 // ユーザーアイテムにインサート
 
-
+/*
 try {
     $db = new PDO(sprintf("mysql:dbname=%s;host=%s", substr($cleardb['path'], 1), $cleardb['host']), $cleardb['user'], $cleardb['pass']);
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -62,6 +64,6 @@ try {
     $_SESSION['error_flg'] = "データベース接続エラー";
     header('Location: ./mypage.php');
     exit;
-}
+}*/
 header('Location: ./result.php');
         exit;

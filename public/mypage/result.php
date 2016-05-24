@@ -6,7 +6,7 @@ if(!$_SESSION['login_user_id']) {
 }
 
 $result = $_SESSION['result'];
-
+var_dump($result);
 
 
 ?>
