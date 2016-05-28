@@ -8,8 +8,6 @@ if(!$_SESSION['user_id']) {
 }
 
 $result = $_SESSION['result'];
-var_dump($result);
-
 
 ?>
 
@@ -24,24 +22,9 @@ var_dump($result);
 <body>
     <h4>結果</h4>
     <div>
-        <img src="./images/<?php echo $result; ?>.jpg" width="200px">
+        <img src="../images/<?php echo $result; ?>.jpg" width="200px">
     </div>
-    <?php if(isset($total_count)): ?>
-        <h4>確率</h4>
-        <div>
-            <table>
-                <?php foreach($_SESSION['list'] as $value): ?>
-                <?php 
-                    $rate = ($value['rate'] / $total_count) * 100;
-                ?>
-                <tr>
-                    <td><?php echo $value['name']; ?></td>
-                    <td><?php echo ($rate . " %"); ?></td>
-                </tr>
-                <? endforeach; ?>
-            </table>
-        </div>
-    <?php endif; ?>
+ 
     <button class="btn" onclick="location.href='./mypage.php'">
         インデックスへ戻る
     </button>

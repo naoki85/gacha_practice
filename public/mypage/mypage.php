@@ -21,8 +21,8 @@ $username = $_SESSION['username'];
         <button class="btn" type="button" onclick="location.href='./gachaFifth.php'">
                 DBを利用してがちゃを作成
         </button>
-        <button class="btn" type="button" onclick="location.href='./gachaSecond.php'">
-                がちゃ②
+        <button class="btn" type="button" onclick="location.href='../admin/admin.php'">
+                管理画面
         </button>
         <button class="btn" type="button" onclick="location.href='./gachaThird.php'">
                 がちゃ③
