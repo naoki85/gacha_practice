@@ -1,5 +1,5 @@
 <?php
-require_once '../db.php';
+require_once '../template/db.php';
 
 $sql = 'SELECT * FROM `users`';
 $prepare = $db->prepare($sql);
@@ -31,6 +31,7 @@ require_once '../template/template_header.php';
             <td><?php echo $user['id']; ?></td>
             <td>編集、削除機能など</td>
         </tr>
+    <?php endforeach; ?>
     </tbody>
 </table>
 
