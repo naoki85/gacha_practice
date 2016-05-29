@@ -16,7 +16,7 @@ $username = $_SESSION['username'];
         <title>がちゃ</title>
         <link rel="stylesheet" href="../my_template.css">
         <link rel="stylesheet" type="text/css" href="../template/datetimepicker-master/jquery.datetimepicker.css"/ >
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script> -->
         <script src="../template/datetimepicker-master/jquery.js"></script>
         <script src="../template/datetimepicker-master/jquery.datetimepicker.min.js"></script>
     </head>
@@ -43,7 +43,7 @@ $username = $_SESSION['username'];
         <form action="updated_at.php" method="post">
             <input type="text" name="user_updated_time" id="datetimepicker" />
         </form>
-        
+
         <!-- JQuery datetimepicker -->
         <script>
             $('#datetimepicker').datetimepicker({
