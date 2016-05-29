@@ -46,11 +46,13 @@ $username = $_SESSION['username'];
 
         <!-- JQuery datetimepicker -->
         <script>
+        $(function() {
             $('#datetimepicker').datetimepicker({
                 format: 'Y-m-d H:i',
                 inline: true,
                 lang: 'ja'
             });
+        });
         </script>
     </body>
 </html>
