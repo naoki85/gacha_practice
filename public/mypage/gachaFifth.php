@@ -1,13 +1,12 @@
 <?php
 require_once '../template/db.php';
 
-$sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id`';
+$sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id` WHERE `gacha`.`gacha_campaign_id` = 0';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $gacha_items = $prepare->fetchAll();
 
 // 以下、がちゃ④と同様の実装
-
 $max = 0;
 foreach($gacha_items as $value) {
     $max += $value['ratio'];
@@ -23,7 +22,6 @@ foreach($gacha_items as $value) {
         break;
     }
 }
-//var_dump($_SESSION['result']);
 
 $sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, "test", :created_time, :updated_time)';
 $prepare_log = $db->prepare($sql_log);
