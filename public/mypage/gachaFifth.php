@@ -26,19 +26,20 @@ foreach($gacha_items as $value) {
 //var_dump($_SESSION['result']);
 
 
-$sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, :time, :time, :time)';
+$sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, "aaaaa", :time, :time)';
 $prepare_log = $db->prepare($sql_log);
-$prepare_log->bindValue(':user_id', $_SESSION['user_id']);
-$prepare_log->bindValue(':time', time());
-$prepare_log->execute();
 
+//$prepare_log->bindValue(':user_id', $_SESSION['user_id']);
+//$prepare_log->bindValue(':time', time());
+$prepare_log->execute();
+/*
 $sql_item = 'INSERT INTO `user_item` VALUES(null, :user_id, :item_id, :time, :time)';
 $prepare_item = $db->prepare($sql_item);
 $prepare_item->bindValue(':user_id', $_SESSION['user_id']);
 $prepare_item->bindValue(':item_id', $item_id);
 $prepare_item->bindValue(':time', time());
 $prepare_item->execute();
-
+*/
 header('Location: ./result.php');
 exit;
 
