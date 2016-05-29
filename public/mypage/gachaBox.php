@@ -2,12 +2,16 @@
 require_once '../template/db.php';
 
 // ベースはがちゃ⑤と同様
-$sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id`';
+$sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id` WHERE `gacha`.`gacha_campaign_id` = 0';
 $prepare = $db->prepare($sql);
 $gacha = $prepare->execute();
-var_dump($gacha);
-$gacha_count = count($gacha);
 $gacha_items = $prepare->fetchAll();
+
+$sql_count = 'SELECT count(*) FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id` WHERE `gacha`.`gacha_campaign_id` = 0';
+$prepare = $db->prepare($sql_count);
+$gacha_count = $prepare->execute();
+var_dump($gacha_count);
+
 /*
 $i = 0;
 while($i < $gacha_count) {
