@@ -7,7 +7,7 @@ $prepare = $db->prepare($sql);
 $gacha = $prepare->execute();
 $gacha_count = count($gacha);
 $gacha_items = $prepare->fetchAll();
-
+/*
 $i = 0;
 while($i < $gacha_count) {
     $max = 0;
@@ -56,10 +56,10 @@ $sql_count_log = 'SELECT count(*) FROM `gacha_log` WHERE `user_id` = :user_id';
 $prepare_count_log = $db->prepare($sql_count_log);
 $prepare_count_log->bindValue(':user_id', $_SESSION['user_id']);
 $gacha_log_count = $prepare_count_log->execute();
-
+*/
 var_dump($gacha_count);
-var_dump($gacha_log_count);
-
+//var_dump($gacha_log_count);
+/*
 switch ($gacha_log_count) {
     case 3:
         echo "iは0に等しい";
@@ -71,6 +71,7 @@ switch ($gacha_log_count) {
         echo "iは2に等しい";
         break;
 }
+*/
 //header('Location: ./result.php');
 //exit;
 
