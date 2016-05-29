@@ -6,6 +6,11 @@ if(!$_SESSION['user_id']) {
 }
 
 $username = $_SESSION['username'];
+
+if(isset($_SESSION['msg'])) {
+    $msg = $_SESSION['msg'];
+    $_SESSION['msg'] = '';
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +25,8 @@ $username = $_SESSION['username'];
     </head>
     <body>
         <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
+        <?php if(isset($msg)): ?>
+            <span style="color:#ff0000;"><?php echo $msg; ?></span>
         <button class="btn" type="button" onclick="location.href='./gachaFifth.php'">
                 DBを利用してがちゃを作成
         </button>
@@ -40,6 +47,7 @@ $username = $_SESSION['username'];
         </button>
         <form action="updated_at.php" method="post">
             <input type="text" name="user_updated_time" id="datetimepicker" />
+            <input type="submit" value="登録する" />
         </form>
 
         <!-- JQuery datetimepicker -->
@@ -49,7 +57,6 @@ $username = $_SESSION['username'];
         $(function() {
             $('#datetimepicker').datetimepicker({
                 format: 'Y-m-d H:i',
-                inline: true,
                 lang: 'ja'
             });
         });
