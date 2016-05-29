@@ -24,7 +24,14 @@ $result = $_SESSION['result'];
     <div>
         <img src="../images/<?php echo $result; ?>.jpg" width="200px">
     </div>
- 
+
+    <?php if(isset($SESSION['special_item'])): ?>
+        <div>
+            <?php echo $SESSION['special_item']; ?>
+            <!-- <img src="../images/<?php //echo $result; ?>.jpg" width="200px"> -->
+        </div>
+    <?php endif; ?>
+
     <button class="btn" onclick="location.href='./mypage.php'">
         インデックスへ戻る
     </button>

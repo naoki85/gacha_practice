@@ -35,7 +35,7 @@ for($i = 0; $i < $gacha_count; $i++) {
     $prepare_user_item->bindValue(':item_id', $item_id);
     $exist_user_item = $prepare->execute();
 
-    if(empty($exist_user_item)) {
+    if(!$exist_user_item) {
         break;
     }
 }
@@ -63,17 +63,17 @@ $gacha_log_count = $prepare_count_log->fetchColumn();
 
 switch ($gacha_log_count) {
     case 3:
-        echo "iは0に等しい";
+        $SESSION['special_item'] = 'blackMagician';
         break;
     case 6:
-        echo "iは1に等しい";
+        $SESSION['special_item'] = 'blackMagicianGirl';
         break;
     case 10:
-        echo "iは2に等しい";
+        $SESSION['special_item'] = 'blackMagicianBoy';
         break;
 }
 
-//header('Location: ./result.php');
-//exit;
+header('Location: ./result.php');
+exit;
 
 
