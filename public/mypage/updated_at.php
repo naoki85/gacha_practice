@@ -9,7 +9,7 @@ try {
     $prepare->bindValue(':time', $updated_at);
     $prepare->bindValue(':user_id', $_SESSION['user_id']);
     $prepare->execute();
-    $SESSION['msg'] = "日付を修正しました。";
+    $_SESSION['msg'] = "日付を修正しました。";
     return header('Location: ./mypage.php');
 } catch (PDOException $e) {
     $_SESSION['error_flg'] = "データベース接続エラー②";
