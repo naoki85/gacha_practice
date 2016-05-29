@@ -25,17 +25,19 @@ foreach($gacha_items as $value) {
 }
 //var_dump($_SESSION['result']);
 
-$sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, "test", :time, :time)';
+$sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, "test", :created_time, :updated_time)';
 $prepare_log = $db->prepare($sql_log);
 $prepare_log->bindValue(':user_id', $_SESSION['user_id']);
-$prepare_log->bindValue(':time', date("Y-m-d H:i:s", time()));
+$prepare_log->bindValue(':created_time', date("Y-m-d H:i:s", time()));
+$prepare_log->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
 $prepare_log->execute();
 
-$sql_item = 'INSERT INTO `user_item` VALUES(null, :user_id, :item_id, :time, :time)';
+$sql_item = 'INSERT INTO `user_item` VALUES(null, :user_id, :item_id, :created_time, :updated_time)';
 $prepare_item = $db->prepare($sql_item);
 $prepare_item->bindValue(':user_id', $_SESSION['user_id']);
 $prepare_item->bindValue(':item_id', $item_id);
-$prepare_item->bindValue(':time', date("Y-m-d H:i:s", time()));
+$prepare_item->bindValue(':created_time', date("Y-m-d H:i:s", time()));
+$prepare_item->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
 $prepare_item->execute();
 
 header('Location: ./result.php');
