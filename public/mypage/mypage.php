@@ -18,7 +18,7 @@ $username = $_SESSION['username'];
         <link rel="stylesheet" type="text/css" href="../template/datetimepicker-master/jquery.datetimepicker.css"/ >
         <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script> -->
         <script src="../template/datetimepicker-master/jquery.js"></script>
-        <script src="../template/datetimepicker-master/jquery.datetimepicker.min.js"></script>
+        <script src="../template/datetimepicker-master/jquery.datetimepicker.js"></script>
     </head>
     <body>
         <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
