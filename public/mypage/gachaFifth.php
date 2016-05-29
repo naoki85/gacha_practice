@@ -6,7 +6,9 @@ $prepare = $db->prepare($sql);
 $prepare->execute();
 $gacha_items = $prepare->fetchAll();
 
+var_dump($gacha_items);
 // 以下、がちゃ④と同様の実装
+/*
 $max = 0;
 foreach($gacha_items as $value) {
     $max += $value['rate'];
@@ -39,3 +41,4 @@ $prepare_item->execute();
 
 header('Location: ./result.php');
 exit;
+*/
