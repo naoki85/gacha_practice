@@ -48,7 +48,7 @@ $username = $_SESSION['username'];
         <script>
         $(function() {
             $('#datetimepicker').datetimepicker({
-                timepicker: true;
+                timepicker: true
                 //format: 'Y-m-d H:i',
                 //inline: true,
                 //lang: 'ja'
