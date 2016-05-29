@@ -5,6 +5,7 @@ require_once '../template/db.php';
 $sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id`';
 $prepare = $db->prepare($sql);
 $gacha = $prepare->execute();
+var_dump($gacha);
 $gacha_count = count($gacha);
 $gacha_items = $prepare->fetchAll();
 /*
