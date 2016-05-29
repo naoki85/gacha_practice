@@ -25,7 +25,7 @@ foreach($gacha_items as $value) {
 }
 //var_dump($_SESSION['result']);
 
-
+require_once '../template/db.php';
 $sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, "aaaaa", :time, :time)';
 $prepare_log = $db->prepare($sql_log);
 
