@@ -34,6 +34,7 @@ require_once '../template/template_header.php';
         <span>ただいま開催中の期間限定がちゃはこちら</span><br />
         <?php echo "cam_" . $campaign_id . ".jpg"; ?>
     </div>
+<?php endif; ?>
 
 <?php
 require_once '../template/template_footer.php';
