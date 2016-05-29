@@ -23,10 +23,9 @@ foreach($gacha_items as $value) {
         break;
     }
 }
-var_dump($_SESSION['result']);
+//var_dump($_SESSION['result']);
 
 
-/*
 $sql_log = 'INSERT INTO `gacha_log` VALUES (null, :user_id, :time, :time, :time)';
 $prepare_log = $db->prepare($sql_log);
 $prepare_log->bindValue(':user_id', $_SESSION['user_id']);
@@ -42,4 +41,4 @@ $prepare_item->execute();
 
 header('Location: ./result.php');
 exit;
-*/
+
