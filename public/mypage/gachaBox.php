@@ -9,7 +9,8 @@ $gacha_items = $prepare->fetchAll();
 
 $sql_count = 'SELECT count(*) FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id` WHERE `gacha`.`gacha_campaign_id` = 0';
 $prepare = $db->prepare($sql_count);
-$gacha_count = $prepare->execute();
+$prepare->execute();
+$gacha_count = $prepare->fetchColumn();
 var_dump($gacha_count);
 
 /*
