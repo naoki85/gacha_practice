@@ -11,11 +11,8 @@ $sql_count = 'SELECT count(*) FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id
 $prepare = $db->prepare($sql_count);
 $prepare->execute();
 $gacha_count = $prepare->fetchColumn();
-var_dump($gacha_count);
 
-/*
-$i = 0;
-while($i < $gacha_count) {
+for($i = 0; $i < $gacha_count; $i++) {
     $max = 0;
     foreach($gacha_items as $value) {
         $max += $value['ratio'];
@@ -61,11 +58,9 @@ $prepare_item->execute();
 $sql_count_log = 'SELECT count(*) FROM `gacha_log` WHERE `user_id` = :user_id';
 $prepare_count_log = $db->prepare($sql_count_log);
 $prepare_count_log->bindValue(':user_id', $_SESSION['user_id']);
-$gacha_log_count = $prepare_count_log->execute();
-*/
-var_dump($gacha_count);
-//var_dump($gacha_log_count);
-/*
+$prepare_count_log->execute();
+$gacha_log_count = $prepare_count_log->fetchColumn();
+
 switch ($gacha_log_count) {
     case 3:
         echo "iは0に等しい";
@@ -77,7 +72,7 @@ switch ($gacha_log_count) {
         echo "iは2に等しい";
         break;
 }
-*/
+
 //header('Location: ./result.php');
 //exit;
 
