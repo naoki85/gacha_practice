@@ -37,7 +37,7 @@ if(isset($_SESSION['msg'])) {
         <button class="btn" type="button" onclick="location.href='./gachaBox.php'">
                 ボックスがちゃ
         </button>
-        <button class="btn" type="button" onclick="location.href='./gachaLimited.php'">
+        <button class="btn" type="button" onclick="location.href='./gacha_campaign.php'">
                 期間限定がちゃ
         </button>
         <button class="btn" type="button" onclick="location.href='../login/logout.php'">
