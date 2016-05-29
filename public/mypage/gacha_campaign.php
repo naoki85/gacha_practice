@@ -13,10 +13,11 @@ foreach($users as $user) {
 var_dump($updated_at);
 
 $sql_cam = 'SELECT * FROM `gacha_campaign` WHERE `start` < :updated_at';
+var_dump($sql_cam);
 $prepare_cam = $db->prepare($sql_cam);
 $prepare_cam->bindValue(':updated_at', $updated_at);
-$prepare->execute();
-$gacha_campaign = $prepare->fetchAll();
+$prepare_cam->execute();
+$gacha_campaign = $prepare_cam->fetchAll();
 
 foreach($gacha_campaign as $campain) {
     $campaign_id = $campaign['id'];
@@ -35,7 +36,14 @@ require_once '../template/template_header.php';
         <span>ただいま開催中の期間限定がちゃはこちら</span><br />
         <?php echo "cam_" . $campaign_id . ".jpg"; ?>
     </div>
+    <form action="./gachaLimited.php" method="post">
+        <input type="hidden" name="gacha_campaign_id" value="<?php echo $campaign_id; ?>" />
+        <input type="submit" value="期間限定がちゃをひく！" />
+    </form>
 <?php endif; ?>
+<button class="btn" onclick="location.href='./mypage.php'">
+    マイページへ戻る
+</button>
 
 <?php
 require_once '../template/template_footer.php';
