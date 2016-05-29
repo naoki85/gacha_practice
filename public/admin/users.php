@@ -28,7 +28,7 @@ require_once '../template/template_header.php';
             <td><?php echo $user['username']; ?></td>
             <td><?php echo $user['password']; ?></td>
             <td><?php echo $user['created_at']; ?></td>
-            <td><?php echo $user['id']; ?></td>
+            <td><?php echo $user['updated_at']; ?></td>
             <td>編集、削除機能など</td>
         </tr>
     <?php endforeach; ?>

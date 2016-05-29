@@ -24,11 +24,20 @@ $username = $_SESSION['username'];
         <button class="btn" type="button" onclick="location.href='../admin/admin.php'">
                 管理画面
         </button>
-        <button class="btn" type="button" onclick="location.href='./gachaThird.php'">
-                がちゃ③
+        <button class="btn" type="button" onclick="location.href='./gachaBox.php'">
+                ボックスがちゃ
         </button>
-        <button class="btn" type="button" onclick="location.href='./gachaFourth.php'">
-                がちゃ④
+        <button class="btn" type="button" onclick="location.href='./gachaLimited.php'">
+                期間限定がちゃ
         </button>
+        <button class="btn" type="button" onclick="location.href='../login/logout.php'">
+                ログアウト
+        </button>
+        <button class="btn" type="button" onclick="location.href='../login/logout.php'">
+                アンケート
+        </button>
+        <form action="updated_at.php" ,ethod="post">
+            <input type="text" name="user_updated_time" id="" />
+        </form>
     </body>
 </html>
