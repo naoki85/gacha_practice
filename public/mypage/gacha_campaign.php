@@ -10,6 +10,7 @@ $users = $prepare->fetchAll();
 foreach($users as $user) {
     $updated_at = $user['updated_at'];
 }
+var_dump($updated_at);
 
 $sql_cam = 'SELECT * FROM `gacha_campaign` WHERE `start` < :updated_at';
 $prepare_cam = $db->prepare($sql_cam);
