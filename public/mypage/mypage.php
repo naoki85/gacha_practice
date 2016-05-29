@@ -16,9 +16,7 @@ $username = $_SESSION['username'];
         <title>がちゃ</title>
         <link rel="stylesheet" href="../my_template.css">
         <link rel="stylesheet" type="text/css" href="../template/datetimepicker-master/jquery.datetimepicker.css"/ >
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-        <script src="../template/datetimepicker-master/jquery.js"></script>
-        <script src="../template/datetimepicker-master/jquery.datetimepicker.js"></script>
+        <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
     </head>
     <body>
         <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
@@ -45,12 +43,15 @@ $username = $_SESSION['username'];
         </form>
 
         <!-- JQuery datetimepicker -->
+        <script src="../template/datetimepicker-master/jquery.js"></script>
+        <script src="../template/datetimepicker-master/jquery.datetimepicker.js"></script>
         <script>
         $(function() {
             $('#datetimepicker').datetimepicker({
-                format: 'Y-m-d H:i',
-                inline: true,
-                lang: 'ja'
+                timepicker: true;
+                //format: 'Y-m-d H:i',
+                //inline: true,
+                //lang: 'ja'
             });
         });
         </script>
