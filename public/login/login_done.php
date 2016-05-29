@@ -25,7 +25,7 @@ try {
 }
 
 if(isset($login_user)) {
-    foreach($user_login as $user) {
+    foreach($login_user as $user) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
     }
