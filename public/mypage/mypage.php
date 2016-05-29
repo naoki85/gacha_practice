@@ -27,6 +27,7 @@ if(isset($_SESSION['msg'])) {
         <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
         <?php if(isset($msg)): ?>
             <span style="color:#ff0000;"><?php echo $msg; ?></span>
+        <?php endif; ?>
         <button class="btn" type="button" onclick="location.href='./gachaFifth.php'">
                 DBを利用してがちゃを作成
         </button>
