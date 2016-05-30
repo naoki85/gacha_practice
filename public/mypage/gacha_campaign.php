@@ -32,7 +32,7 @@ require_once '../template/template_header.php';
 <?php else: ?>
     <div>
         <span>ただいま開催中の期間限定がちゃはこちら</span><br />
-        <?php echo "cam_" . $campaign_id . ".jpg"; ?>
+        <img src="../images/cam_<?php echo $campaign_id; ?>.jpg" width="400px">
     </div>
     <form action="./gachaLimited.php" method="post">
         <input type="hidden" name="gacha_campaign_id" value="<?php echo $campaign_id; ?>" />

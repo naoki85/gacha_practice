@@ -63,13 +63,13 @@ $gacha_log_count = $prepare_count_log->fetchColumn();
 
 switch ($gacha_log_count) {
     case 3:
-        $SESSION['special_item'] = 'blackMagician';
+        $SESSION['special_item'] = 'funashi';
         break;
     case 6:
-        $SESSION['special_item'] = 'blackMagicianGirl';
+        $SESSION['special_item'] = 'kumamon';
         break;
     case 10:
-        $SESSION['special_item'] = 'blackMagicianBoy';
+        $SESSION['special_item'] = 'fuzippi';
         break;
 }
 
