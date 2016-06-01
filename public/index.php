@@ -17,8 +17,9 @@ shuffle($list);
 // 配列の先頭1件を取得
 $result = array_shift($list);
 
-//require_once 'https://gacha-practice.herokuapp.com/template/template_header.php';
 ?>
+
+<?php require_once 'https://gacha-practice.herokuapp.com/template/template_header.php'; ?>
 <h4>いろいろながちゃ</h4>
 <button class="btn" type="button" onclick="show()">
         がちゃ①
