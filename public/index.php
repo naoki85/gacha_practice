@@ -49,5 +49,5 @@ require_once 'https://gacha-practice.herokuapp.com/template/template_header.php'
     }
 </script>
 <?php
-require_once 'https://gacha-practice.herokuapp.com/template/template_footer.php';
+//require_once 'https://gacha-practice.herokuapp.com/template/template_footer.php';
 ?>
