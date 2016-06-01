@@ -5,6 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>がちゃ</title>
-    <link rel="stylesheet" href="../my_template.css">
+    <link rel="stylesheet" href="/template/my_template.css">
 </head>
 <body>
