@@ -50,5 +50,5 @@ $result = array_shift($list);
     }
 </script>
 <?php
-//require_once 'https://gacha-practice.herokuapp.com/template/template_footer.php';
+require_once 'https://gacha-practice.herokuapp.com/template/template_footer.php';
 ?>
