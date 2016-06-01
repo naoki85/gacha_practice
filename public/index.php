@@ -19,35 +19,34 @@ $result = array_shift($list);
 
 require_once './template/template_header.php';
 ?>
-    <h4>いろいろながちゃ</h4>
-    <button class="btn" type="button" onclick="show()">
-            がちゃ①
-    </button>
-    <button class="btn" type="button" onclick="location.href='./gachaSecond.php'">
-            がちゃ②
-    </button>
-    <button class="btn" type="button" onclick="location.href='./gachaThird.php'">
-            がちゃ③
-    </button>
-    <button class="btn" type="button" onclick="location.href='./gachaFourth.php'">
-            がちゃ④
-    </button>
-    <button class="btn" type="button" onclick="location.href='./login/add.php'">
-            新規登録する
-    </button>
-    <button class="btn" type="button" onclick="location.href='./login/login.php'">
-            ログインする
-    </button>
-    <div id="result1">
-        <img src="./images/<?php echo $result; ?>.jpg" width="200px">
-    </div>
+<h4>いろいろながちゃ</h4>
+<button class="btn" type="button" onclick="show()">
+        がちゃ①
+</button>
+<button class="btn" type="button" onclick="location.href='./gachaSecond.php'">
+        がちゃ②
+</button>
+<button class="btn" type="button" onclick="location.href='./gachaThird.php'">
+        がちゃ③
+</button>
+<button class="btn" type="button" onclick="location.href='./gachaFourth.php'">
+        がちゃ④
+</button>
+<button class="btn" type="button" onclick="location.href='./login/add.php'">
+        新規登録する
+</button>
+<button class="btn" type="button" onclick="location.href='./login/login.php'">
+        ログインする
+</button>
+<div id="result1">
+    <img src="./images/<?php echo $result; ?>.jpg" width="200px">
+</div>
 
-    <!-- JavaScript -->
-    <script>
-        function show() {
-            document.getElementById("result1").style.display="block";
-        }
-    </script>
-<?php
-require_once './template/template_footer.php';
-?>
+<!-- JavaScript -->
+<script>
+    function show() {
+        document.getElementById("result1").style.display="block";
+    }
+</script>
+
+<?php require_once './template/template_footer.php'; ?>
