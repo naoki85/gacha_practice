@@ -13,7 +13,7 @@ require_once '../template/template_header.php';
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="../template/bootstrap.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../template/bootstrap.css" /> -->
 
 <h1>Welcome!</h1>
 <ul>

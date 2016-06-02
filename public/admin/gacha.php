@@ -1,7 +1,7 @@
 <?php
 require_once '../template/db.php';
 
-$sql = 'SELECT * FROM `gacha` LEFT JOIN `gacha_campaign` ON `gacha`.`gacha_campaign_id` = `gacha_campaign`.`id` INNER JOIN `gacha`.`item_id` = `item`.`id`';
+$sql = 'SELECT * FROM `gacha` LEFT JOIN `gacha_campaign` ON `gacha`.`gacha_campaign_id` = `gacha_campaign`.`id` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id`';
 $prepare = $db->prepare($sql);
 $prepare->execute();
 $gacha = $prepare->fetchAll();
@@ -9,7 +9,7 @@ $gacha = $prepare->fetchAll();
 require_once '../template/template_header.php';
 ?>
 
-<link rel="stylesheet" type="text/css" href="../template/bootstrap.css" />
+<!-- <link rel="stylesheet" type="text/css" href="../template/bootstrap.css" /> -->
 
 <!-- 本体 -->
 <table>
