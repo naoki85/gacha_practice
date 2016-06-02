@@ -19,26 +19,26 @@ require_once '../template/template_header.php';
 
 <h4>こんにちは、<?php echo $username . "さん"; ?></h4>
 <?php if(isset($msg)): ?>
-    <span style="color:#ff0000;"><?php echo $msg; ?></span>
+    <span style="color:#ff0000;"><?php echo $msg; ?></span><br />
 <?php endif; ?>
 <button class="btn" type="button" onclick="location.href='./gachaFifth.php'">
         DBを利用してがちゃを作成
-</button>
+</button><br />
 <button class="btn" type="button" onclick="location.href='../admin/admin.php'">
         管理画面
-</button>
+</button><br />
 <button class="btn" type="button" onclick="location.href='./gachaBox.php'">
         ボックスがちゃ
-</button>
+</button><br />
 <button class="btn" type="button" onclick="location.href='./gacha_campaign.php'">
         期間限定がちゃ
-</button>
+</button><br />
 <button class="btn" type="button" onclick="location.href='../login/logout.php'">
         ログアウト
-</button>
+</button><br />
 <button class="btn" type="button" onclick="location.href='../login/logout.php'">
         アンケート
-</button>
+</button><br />
 <form action="updated_at.php" method="post">
     <input type="text" name="user_updated_time" id="datetimepicker" />
     <input type="submit" value="登録する" />

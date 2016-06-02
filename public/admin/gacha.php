@@ -9,9 +9,8 @@ $gacha = $prepare->fetchAll();
 require_once '../template/template_header.php';
 ?>
 
-<!-- <link rel="stylesheet" type="text/css" href="../template/bootstrap.css" /> -->
-
 <!-- 本体 -->
+<a href="/admin/admin.php">管理画面トップ</a>
 <table>
     <thead>
         <tr>

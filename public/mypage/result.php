@@ -24,10 +24,6 @@ require_once '../template/template_header.php';
     </div>
 <?php endif; ?>
 
-<button class="btn" onclick="location.href='./mypage.php'">
-    インデックスへ戻る
-</button>
-
 <!-- JavaScript -->
 <script>
     // HTML5のHistory APIを利用して「戻る」ボタンを無効化
