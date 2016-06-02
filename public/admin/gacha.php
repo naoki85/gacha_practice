@@ -23,16 +23,21 @@ require_once '../template/template_header.php';
         </tr>
     </thead>
     <tbody>
-    <?php var_dump($gacha); ?>
-    <?php foreach($gacha as $value): ?>
-        <tr>
-            <td><?php echo $value['id']; ?></td>
-            <td><?php echo $value['campaign_name']; ?></td>
-            <td><?php echo $value['item_name']; ?></td>
-            <td><?php echo $value['ratio']; ?></td>
-            <td>編集、削除機能など</td>
-        </tr>
-    <?php endforeach; ?>
+        <?php foreach($gacha as $value): ?>
+            <tr>
+                <td><?php echo $value['id']; ?></td>
+                <td>
+                    <?php if($value['campaign_name'] == NULL): ?>
+                        通常がちゃ
+                    <?php else: ?>
+                        <?php echo $value['campaign_name']; ?>
+                    <?php endif; ?>
+                </td>
+                <td><?php echo $value['item_name']; ?></td>
+                <td><?php echo $value['ratio']; ?></td>
+                <td>編集、削除機能など</td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 
