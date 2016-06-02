@@ -6,6 +6,7 @@ $prepare = $db->prepare($sql);
 $prepare->execute();
 $gacha = $prepare->fetchAll();
 
+var_dump($gacha);
 require_once '../template/template_header.php';
 ?>
 
