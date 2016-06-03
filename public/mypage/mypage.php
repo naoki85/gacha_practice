@@ -36,7 +36,7 @@ require_once '../template/template_header.php';
 <button class="btn" type="button" onclick="location.href='../login/logout.php'">
         ログアウト
 </button><br />
-<button class="btn" type="button" onclick="location.href='../login/logout.php'">
+<button class="btn" type="button" onclick="location.href='./survey.php'">
         アンケート
 </button><br />
 <form action="updated_at.php" method="post">

@@ -10,7 +10,9 @@ require_once '../template/template_header.php';
 ?>
 
 <!-- 本体 -->
-<a href="/admin/admin.php">管理画面トップ</a>
+<div style="text-align:right;">
+    <a href="/admin/admin.php">管理画面トップ</a>
+</div>
 <table>
     <thead>
         <tr>
