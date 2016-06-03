@@ -40,10 +40,10 @@ var_dump($prepare);
         header('Location: ./survey.php');
         exit;
     }
-
+*/
 } else {
     $survey_flg = 2;
-} */
+}
 
 require_once '../template/template_header.php';
 ?>
