@@ -51,11 +51,7 @@ require_once '../template/template_header.php';
 ?>
 
 <!-- 本体 -->
-<?php if($survey_flg == 1): ?>
-    <h3>ご回答ありがとうございました！</h3>
-<?php else: ?>
-    <h3>既にご回答いただいております。ありがとうございました！</h3>
-<?php endif; ?>
+
 
 <?php
 require_once '../template/template_footer.php';
