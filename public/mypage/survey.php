@@ -8,9 +8,10 @@ require_once '../template/template_header.php';
 ?>
 
 <!-- 本体 -->
-<?php if(isset($_SESSION['survey_msg'])) {
-        echo $_SESSION['survey_msg'];
-    } ?>
+<?php if(isset($_SESSION['survey_msg'])): ?>
+    <span style="color:#ff0000;"><?php echo $_SESSION['survey_msg']; ?>
+<?php endif; ?>
+
 <h3>アンケートにご協力をお願いします。</h3>
 <form action="survey_done.php" method="post">
     <h4>現在の業務内容、言語の中で一番近いものを選んでください。（必須。1つ選択）</h4>

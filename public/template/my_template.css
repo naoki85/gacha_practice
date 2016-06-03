@@ -13,7 +13,14 @@
 
 /* ボタン */
 .btn {
-
+    background: #EEE;
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    color: #111;
+    width: 100px;
+    padding: 10px 0;
 }
 
 /* テーブル */
@@ -56,6 +63,10 @@ td {
 /* リスト */
 ul {
     list-style-type: none;
+}
+
+li {
+    margin-top: 5px;
 }
 
 /* フッター */
