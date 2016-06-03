@@ -30,8 +30,7 @@ if($exist_survey == 0) {
     $prepare->bindValue(':question_3', $question_3);
     $prepare->bindValue(':created_time', date("Y-m-d H:i:s", time()));
     $prepare->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
-var_dump($prepare);
-/*
+
     try {
         $prepare->execute();
         $survey_flg = 1;
@@ -40,7 +39,6 @@ var_dump($prepare);
         header('Location: ./survey.php');
         exit;
     }
-*/
 } else {
     $survey_flg = 2;
 }
