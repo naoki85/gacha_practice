@@ -13,13 +13,12 @@ if($question_1 == NULL || $question_2 == NULL) {
     header('Location: ./survey.php');
 }
 
-/*
 $sql = 'SELECT count(*) FROM `survey` WHERE `user_id` = :user_id';
 $prepare = $db->prepare($sql);
 $prepare->bindValue(':user_id', $_SESSION['user_id']);
-$search_survey = $prepare->execute();
-$exist_survey = $search_survey->fetchColumn();
-*/
+$prepare->execute();
+$exist_survey = $prepare->fetchColumn();
+
 var_dump($question_1);
 var_dump($exist_survey);
 /*
