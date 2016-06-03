@@ -8,8 +8,8 @@ require_once '../template/template_header.php';
 ?>
 
 <!-- 本体 -->
-<?php if(isset($_SESSION['msg'])) {
-        echo $_SESSION['msg'];
+<?php if(isset($_SESSION['survey_msg'])) {
+        echo $_SESSION['survey_msg'];
     } ?>
 <h3>アンケートにご協力をお願いします。</h3>
 <form action="survey_done.php" method="post">

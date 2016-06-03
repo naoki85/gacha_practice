@@ -1,12 +1,15 @@
 <?php
 require_once '../template/db.php';
+
+$_SESSION['survey_msg'] = '';
+
 $question_1         = $_POST['question_1'];
 $question_2         = $_POST['question_2'];
 $question_2_other   = $_POST['question_2_other'];
 $question_3         = $_POST['question_3'];
 
 if($question_1 == NULL || $question_2 == NULL) {
-    $_SESSION['msg'] = "質問１、質問２は回答してください";
+    $_SESSION['survey_msg'] = "質問１、質問２は回答してください";
     header('Location: ./survey.php');
 }
 
@@ -27,15 +30,17 @@ if($exist_survey == 0) {
     $prepare->bindValue(':question_3', $question_3);
     $prepare->bindValue(':created_time', date("Y-m-d H:i:s", time()));
     $prepare->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
-
+var_dump($prepare);
+/*
     try {
         $prepare->execute();
         $survey_flg = 1;
     } catch (PDOException $e) {
-        $_SESSION['msg'] = "データベース接続エラーです。もう1回試してください。";
+        $_SESSION['survey_msg'] = "データベース接続エラーです。もう1回試してください。";
         header('Location: ./survey.php');
         exit;
     }
+*/
 } else {
     $survey_flg = 2;
 }
