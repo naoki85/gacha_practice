@@ -3,7 +3,7 @@ require_once '../template/db.php';
 $question_1         = $_POST['question_1'];
 $question_2         = $_POST['question_2'];
 $question_2_other   = $_POST['question_2_other'];
-$question_3         = $_POST['question_4'];
+$question_3         = $_POST['question_3'];
 
 if($question_1 == NULL || $question_2 == NULL) {
     $_SESSION['msg'] = "質問１、質問２は回答してください";
@@ -13,7 +13,8 @@ if($question_1 == NULL || $question_2 == NULL) {
 $sql = 'SELECT count(*) FROM `survey` WHERE `user_id` = :user_id';
 $prepare = $db->prepare($sql);
 $prepare->bindValue(':user_id', $_SESSION['user_id']);
-$exist_survey = $prepare->execute()->fetchColumn();
+$search_survey = $prepare->execute();
+$exist_survey = $search_survey->fetchColumn();
 
 $survey_flg = 0;
 if($exist_survey == 0) {
