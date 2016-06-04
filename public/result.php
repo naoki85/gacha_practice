@@ -1,5 +1,6 @@
 <?php
 session_start();
+// 結果を変数に格納
 if($_SESSION['array_flg'] == 1) {
     foreach($_SESSION['result'] as $value) {
         $result = $value;
@@ -8,6 +9,7 @@ if($_SESSION['array_flg'] == 1) {
     $result = $_SESSION['result'];
 }
 
+// 別で渡しているリストを変数に格納
 if(isset($_SESSION['list'])) {
     $total_count = 0;
     foreach($_SESSION['list'] as $value) {

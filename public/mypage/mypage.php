@@ -41,7 +41,7 @@ require_once '../template/template_header.php';
 </button><br />
 <form action="updated_at.php" method="post">
     <input type="text" name="user_updated_time" id="datetimepicker" />
-    <input type="submit" value="登録する" />
+    <input type="submit" value="登録する" class="btn" />
 </form>
 
 <!-- JQuery datetimepicker -->

@@ -1,6 +1,6 @@
 <?php
-
 session_start();
+$_SESSION['error_flg'] = '';
 
 $cleardb = parse_url(getenv('CLEARDB_DATABASE_URL'));
 

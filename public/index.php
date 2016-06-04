@@ -38,6 +38,8 @@ require_once './template/template_header.php';
 <button class="btn" type="button" onclick="location.href='./login/login.php'">
         ログインする
 </button>
+
+<!-- がちゃ①の結果表示エリア -->
 <div id="result1">
     <img src="./images/<?php echo $result; ?>.jpg" width="200px">
 </div>
