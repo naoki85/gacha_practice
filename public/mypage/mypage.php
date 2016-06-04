@@ -17,7 +17,7 @@ require_once '../template/template_header.php';
 
 <link rel="stylesheet" type="text/css" href="../template/datetimepicker-master/jquery.datetimepicker.css" />
 
-<h4>こんにちは、<?php echo $username . "さん"; ?></h4>
+<h2>こんにちは、<?php echo $username . "さん"; ?></h2>
 <?php if(isset($msg)): ?>
     <span style="color:#ff0000;"><?php echo $msg; ?></span><br />
 <?php endif; ?>
@@ -54,7 +54,8 @@ require_once '../template/template_header.php';
 $(function() {
     $('#datetimepicker').datetimepicker({
         format: 'Y-m-d H:i',
-        lang: 'ja'
+        lang: 'ja',
+        closeOnDateSelect:true
     });
 });
 </script>

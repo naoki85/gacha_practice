@@ -40,9 +40,6 @@ require_once '../template/template_header.php';
         <input type="submit" value="期間限定がちゃをひく！" />
     </form>
 <?php endif; ?>
-<button class="btn" onclick="location.href='./mypage.php'">
-    マイページへ戻る
-</button>
 
 <?php
 require_once '../template/template_footer.php';
