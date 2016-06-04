@@ -11,9 +11,10 @@ foreach($users as $user) {
     $updated_at = $user['updated_at'];
 }
 
-$sql_cam = 'SELECT * FROM `gacha_campaign` WHERE `start` < :updated_at';
+$sql_cam = 'SELECT * FROM `gacha_campaign` WHERE `start` <= :start_time AND `end` > :end_time';
 $prepare_cam = $db->prepare($sql_cam);
-$prepare_cam->bindValue(':updated_at', $updated_at);
+$prepare_cam->bindValue(':start_time', $updated_at);
+$prepare_cam->bindValue(':end_time', $updated_at);
 $prepare_cam->execute();
 $gacha_campaign = $prepare_cam->fetchAll();
 

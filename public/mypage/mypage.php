@@ -40,6 +40,7 @@ require_once '../template/template_header.php';
         アンケート
 </button><br />
 <div style="margin-top:10px;">
+    <h3>ユーザー時刻を変更する</h3>
     <form action="updated_at.php" method="post">
         <input type="text" name="user_updated_time" id="datetimepicker" />
         <input type="submit" value="登録する" class="btn" />
