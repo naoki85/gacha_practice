@@ -20,7 +20,7 @@ require_once '../template/template_header.php';
 <!-- 回数特典表示部分 -->
 <?php if(isset($_SESSION['special_item_count']) && $_SESSION['special_item_count'] != NULL && isset($_SESSION['special_item']) && $_SESSION['special_item'] != NULL): ?>
     <div>
-        <h3><?php echo $_SESSION['special_item_count']; ?>回目の特典です！</h3>
+        <h3>▽<?php echo $_SESSION['special_item_count']; ?>回目の特典です！▽</h3>
         <img src="../images/<?php echo $_SESSION['special_item']; ?>.jpg" width="200px">
     </div>
 <?php endif; ?>
