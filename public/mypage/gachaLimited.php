@@ -1,6 +1,8 @@
 <?php
 require_once '../template/db.php';
 
+$_SESSION['result'] = '';
+
 $gacha_campaign_id = $_POST['gacha_campaign_id'];
 
 // ベースはがちゃ⑤と同様

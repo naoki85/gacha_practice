@@ -39,10 +39,12 @@ require_once '../template/template_header.php';
 <button class="btn" type="button" onclick="location.href='./survey.php'">
         アンケート
 </button><br />
-<form action="updated_at.php" method="post">
-    <input type="text" name="user_updated_time" id="datetimepicker" />
-    <input type="submit" value="登録する" class="btn" />
-</form>
+<div style="margin-top:10px;">
+    <form action="updated_at.php" method="post">
+        <input type="text" name="user_updated_time" id="datetimepicker" />
+        <input type="submit" value="登録する" class="btn" />
+    </form>
+</div>
 
 <!-- JQuery datetimepicker -->
 <script src="../template/datetimepicker-master/jquery.js"></script>

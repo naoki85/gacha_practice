@@ -16,11 +16,9 @@ require_once '../template/template_header.php';
 <!-- <link rel="stylesheet" type="text/css" href="../template/bootstrap.css" /> -->
 
 <h1>Welcome!</h1>
-<ul>
-    <li><a href="/admin/users.php">ユーザー一覧</a></li>
-    <li><a href="/admin/item.php">アイテム一覧</a></li>
-    <li><a href="/admin/gacha.php">がちゃ一覧</a></li>
-</ul>
+<h3><a href="/admin/users.php">ユーザー一覧</a></h3>
+<h3><a href="/admin/item.php">アイテム一覧</a></h3>
+<h3><a href="/admin/gacha.php">がちゃ一覧</a></h3>
 
 <?php 
 require_once '../template/template_footer.php';

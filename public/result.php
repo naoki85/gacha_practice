@@ -40,9 +40,6 @@ require_once './template/template_header.php';
         </table>
     </div>
 <?php endif; ?>
-<button class="btn" onclick="location.href='./index.php'">
-    インデックスへ戻る
-</button>
 
 <!-- JavaScript -->
 <script>

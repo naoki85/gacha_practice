@@ -1,6 +1,8 @@
 <?php
 require_once '../template/db.php';
 
+$_SESSION['result'] = '';
+
 $sql = 'SELECT * FROM `gacha` INNER JOIN `item` ON `gacha`.`item_id` = `item`.`id` WHERE `gacha`.`gacha_campaign_id` = 0';
 $prepare = $db->prepare($sql);
 $prepare->execute();

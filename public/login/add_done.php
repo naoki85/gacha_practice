@@ -38,6 +38,7 @@ try {
     $prepare->bindValue(':created_time', date("Y-m-d H:i:s", time()));
     $prepare->bindValue(':updated_time', date("Y-m-d H:i:s", time()));
     $prepare->execute();
+    $_SESSION['error_flg'] = "新規登録が完了しました！";
     header('Location: ./login.php');
     exit;
 } catch (PDOException $e) {
